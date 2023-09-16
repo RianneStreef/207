@@ -13,7 +13,7 @@ import img4 from "../images/4.jpg";
 const Images = () => {
   const [open, setOpen] = useState(false);
 
-  const slides = [img1, img2, img3, img4];
+  const slides = [{ src: img1 }, { src: img2 }, { src: img3 }, { src: img4 }];
   return (
     <div className="images">
       <img
