@@ -1,0 +1,19 @@
+.description {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
+  padding: var(--padding-mobile);
+}
+
+.description ul {
+  margin: 15px 15px 15px 40px;
+}
+
+.description li {
+  margin: 10px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .description {
+    padding: var(--padding-desktop);
+  }
+}

@@ -1,0 +1,16 @@
+.contact {
+  background-color: var(--color-background-light);
+  padding: var(--padding-mobile);
+}
+
+.input {
+  border: none;
+  border-bottom: 2px solid var(--color-highlight);
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .contact {
+    padding: var(--padding-desktop);
+  }
+}
