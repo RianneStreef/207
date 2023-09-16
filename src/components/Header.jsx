@@ -24,6 +24,7 @@ const Header = (props) => {
   language === "french" ? (languageToUse = content.french) : null;
   return (
     <div className="header">
+      ESKIVAL 207
       <div className="hidden-desktop">
         <Burger
           language={language}
@@ -35,6 +36,9 @@ const Header = (props) => {
         <li>
           <Link to="/" className="nav-link">
             Welcome
+          </Link>
+          <Link to="/#contact" className="nav-link">
+            Contact
           </Link>
         </li>
 

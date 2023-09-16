@@ -14,7 +14,7 @@ export const french = {
   bathroom: "Salle de bains",
 
   description1:
-    "Location appartement Val Thorens 6 pers 51m² Exposé plein sud et situé au centre de la station de Val Thorens, place Caron, cet appartement vous propose:",
+    "Exposé plein sud et situé au centre de la station de Val Thorens, place Caron, cet appartement vous propose:",
   descriptionLi1: "2 chambres avec lit double 160cm x 200cm",
   descriptionLi2: "1 coin montagne avec lit superposé",
   descriptionLi3: "1 canapé lit",
@@ -24,8 +24,7 @@ export const french = {
   description3:
     "Le sol, l’éclairage et la salle de bain ont été rénovés récemment. Grâce à son emplacement central dans Val Thorens, vous trouverez à moins de 200m : le centre sportif, la piscine, des supérettes, le bureau des remontées mécaniques pour vos forfaits de ski, le cinéma, des bars, des restaurants et des magasins de ski pour la location de votre matériel.",
 
-  contact: "Contact",
-  contactIntro: "Contact intro",
+  contact: "Contactez nous pour plus des informations!",
   name: "Name",
   email: "Email",
   message: "Message",

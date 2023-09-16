@@ -15,7 +15,6 @@ const Contact = (props) => {
       <div className="header-placeholder" />
 
       <h3>{languageToUse.contact}</h3>
-      <p className="grey-text intro-text">{languageToUse.contactIntro}</p>
 
       <div className="contact-card">
         <div className="form-container">

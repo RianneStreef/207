@@ -76,6 +76,15 @@ const Navbar = (props) => {
             Welcome
           </Link>
         </li>
+        <li>
+          <Link
+            to="/#contact"
+            className="nav-link"
+            onClick={() => setOpen(!open)}
+          >
+            Contact
+          </Link>
+        </li>
 
         <li className="social-links-header">
           <div className="nav-item-language">

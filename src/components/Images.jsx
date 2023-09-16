@@ -12,6 +12,8 @@ import img4 from "../images/4.jpg";
 
 const Images = () => {
   const [open, setOpen] = useState(false);
+
+  const slides = [img1, img2, img3, img4];
   return (
     <div className="images">
       <img
@@ -38,11 +40,37 @@ const Images = () => {
         alt=""
         onClick={() => setOpen(true)}
       />
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        slides={[{ img1 }, { img2 }, { img3 }, { img4 }]}
+      <img
+        src={img1}
+        className="display-image"
+        alt=""
+        onClick={() => setOpen(true)}
       />
+      <img
+        src={img2}
+        className="display-image"
+        alt=""
+        onClick={() => setOpen(true)}
+      />
+      <img
+        src={img3}
+        className="display-image"
+        alt=""
+        onClick={() => setOpen(true)}
+      />
+      <img
+        src={img4}
+        className="display-image"
+        alt=""
+        onClick={() => setOpen(true)}
+      />
+      <img
+        src={img1}
+        className="display-image"
+        alt=""
+        onClick={() => setOpen(true)}
+      />
+      <Lightbox open={open} close={() => setOpen(false)} slides={slides} />
     </div>
   );
 };
