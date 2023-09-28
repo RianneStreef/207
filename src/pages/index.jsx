@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 import "../styles/global.css";
@@ -13,23 +13,39 @@ import { content } from "../content/languages";
 import intakeInfo from "../content/intake";
 
 import * as ReactGA from "react-ga";
-import CookieConsent from "react-cookie-consent";
+import CookieConsent, {
+  getCookieConsentValue,
+  Cookies,
+} from "react-cookie-consent";
 
 const IndexPage = function (props) {
   let { language, languageToUse } = props;
 
   languageToUse = content.french;
+
   const initGA = (id) => {
     // if (process.env.NODE_ENV === "production") {
+    console.log("InitGA");
     ReactGA.initialize(id);
     //}
   };
 
   const handleAcceptCookie = () => {
-    if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
-      initGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
-    }
+    initGA("G-Q3TL22V32Y");
   };
+
+  const handleDeclineCookie = () => {
+    Cookies.remove("_ga");
+    Cookies.remove("_gat");
+    Cookies.remove("_gid");
+  };
+
+  useEffect(() => {
+    const isConsent = getCookieConsentValue();
+    if (isConsent === "true") {
+      handleAcceptCookie();
+    }
+  }, []);
 
   return (
     <div>
@@ -45,7 +61,11 @@ const IndexPage = function (props) {
         <link rel="canonical" href={intakeInfo.domainName} />
       </Helmet>
       <div className="header-placeholder" />
-      <CookieConsent enableDeclineButton>
+      <CookieConsent
+        enableDeclineButton
+        onAccept={handleAcceptCookie}
+        onDecline={handleDeclineCookie}
+      >
         This website uses cookies to enhance the user experience.
       </CookieConsent>
       <Hero />
