@@ -12,15 +12,14 @@ const Description = (props) => {
 
   return (
     <div className="description">
-      <p>
-        {languageToUse.description1}
-        <ul>
-          <li>{languageToUse.descriptionLi1}</li>
-          <li>{languageToUse.descriptionLi2}</li>
-          <li>{languageToUse.descriptionLi3}</li>
-          <li>{languageToUse.descriptionLi4}</li>
-        </ul>
-      </p>
+      <p>{languageToUse.description1}</p>
+      <ul>
+        <li>{languageToUse.descriptionLi1}</li>
+        <li>{languageToUse.descriptionLi2}</li>
+        <li>{languageToUse.descriptionLi3}</li>
+        <li>{languageToUse.descriptionLi4}</li>
+      </ul>
+
       <p>{languageToUse.description2}</p>
       <p>{languageToUse.description3}</p>
     </div>

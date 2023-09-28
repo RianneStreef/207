@@ -12,10 +12,24 @@ import Contact from "../components/Contact";
 import { content } from "../content/languages";
 import intakeInfo from "../content/intake";
 
+import * as ReactGA from "react-ga";
+import CookieConsent from "react-cookie-consent";
+
 const IndexPage = function (props) {
   let { language, languageToUse } = props;
 
   languageToUse = content.french;
+  const initGA = (id) => {
+    // if (process.env.NODE_ENV === "production") {
+    ReactGA.initialize(id);
+    //}
+  };
+
+  const handleAcceptCookie = () => {
+    if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
+      initGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+    }
+  };
 
   return (
     <div>
@@ -31,6 +45,9 @@ const IndexPage = function (props) {
         <link rel="canonical" href={intakeInfo.domainName} />
       </Helmet>
       <div className="header-placeholder" />
+      <CookieConsent enableDeclineButton>
+        This website uses cookies to enhance the user experience.
+      </CookieConsent>
       <Hero />
       <Intro language={language} />
       <Images />
