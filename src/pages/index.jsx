@@ -12,7 +12,7 @@ import Contact from "../components/Contact";
 import { content } from "../content/languages";
 import intakeInfo from "../content/intake";
 
-import * as ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import CookieConsent, {
   getCookieConsentValue,
   Cookies,
@@ -42,6 +42,9 @@ const IndexPage = function (props) {
 
   useEffect(() => {
     const isConsent = getCookieConsentValue();
+    // if (isConsent) {
+    //   document.getElementById("cookieConsent").style.display = "none";
+    // }
     if (isConsent === "true") {
       handleAcceptCookie();
     }
@@ -61,10 +64,26 @@ const IndexPage = function (props) {
         <link rel="canonical" href={intakeInfo.domainName} />
       </Helmet>
       <div className="header-placeholder" />
+      {/* <div className="cookie-consent" id="cookieConsent">
+        <p className="cookie-consent-text">
+          {" "}
+          This website uses cookies to enhance the user experience.
+        </p>
+        <div className="cookie-consent-buttons">
+          <button className="cookie-accept" onClick={handleAcceptCookie}>
+            Accept{" "}
+          </button>
+          <button className="cookie-decline" onClick={handleDeclineCookie}>
+            Decline{" "}
+          </button>
+        </div>
+      </div> */}
       <CookieConsent
         enableDeclineButton
         onAccept={handleAcceptCookie}
         onDecline={handleDeclineCookie}
+        style={{}}
+        buttonStyle={{ background: "#f76a04", fontFamily: "Roboto Bold" }}
       >
         This website uses cookies to enhance the user experience.
       </CookieConsent>

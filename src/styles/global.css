@@ -113,6 +113,15 @@ p {
   border-radius: 10px;
 }
 
+.CookieConsent {
+  background-color: var(--color-background-dark) !important;
+}
+
+.CookieConsent button {
+  font-family: "Roboto Bold" !important;
+  border-radius: 10px !important;
+}
+
 @media only screen and (min-width: 768px) {
   .hidden-mobile {
     display: flex;
