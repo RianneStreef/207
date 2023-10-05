@@ -18,6 +18,8 @@ import CookieConsent, {
   Cookies,
 } from "react-cookie-consent";
 
+import cookies from "../images/icons/cookie.png";
+
 const IndexPage = function (props) {
   let { language, languageToUse } = props;
 
@@ -42,9 +44,7 @@ const IndexPage = function (props) {
 
   useEffect(() => {
     const isConsent = getCookieConsentValue();
-    // if (isConsent) {
-    //   document.getElementById("cookieConsent").style.display = "none";
-    // }
+
     if (isConsent === "true") {
       handleAcceptCookie();
     }
@@ -64,28 +64,16 @@ const IndexPage = function (props) {
         <link rel="canonical" href={intakeInfo.domainName} />
       </Helmet>
       <div className="header-placeholder" />
-      {/* <div className="cookie-consent" id="cookieConsent">
-        <p className="cookie-consent-text">
-          {" "}
-          This website uses cookies to enhance the user experience.
-        </p>
-        <div className="cookie-consent-buttons">
-          <button className="cookie-accept" onClick={handleAcceptCookie}>
-            Accept{" "}
-          </button>
-          <button className="cookie-decline" onClick={handleDeclineCookie}>
-            Decline{" "}
-          </button>
-        </div>
-      </div> */}
+
       <CookieConsent
         enableDeclineButton
         onAccept={handleAcceptCookie}
         onDecline={handleDeclineCookie}
-        style={{}}
-        buttonStyle={{ background: "#f76a04", fontFamily: "Roboto Bold" }}
+        buttonText={languageToUse.cookieAccept}
+        declineButtonText={languageToUse.cookieDecline}
       >
-        This website uses cookies to enhance the user experience.
+        <p className="cookie-text-header">{languageToUse.cookieHeader}</p>
+        <p className="cookie-text">{languageToUse.cookieText}</p>
       </CookieConsent>
       <Hero />
       <Intro language={language} />

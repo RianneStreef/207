@@ -30,6 +30,11 @@ export const french = {
   message: "Message",
   send: "Send",
 
+  cookieHeader: "WE VALUE YOUR PRIVACY!",
+  cookieText: "This website uses cookies to evaluate our traffic.",
+  cookieAccept: "I accept!",
+  cookieDecline: "I decline..",
+
   legal: " Mentions légales",
 
   thanks: "Thank you for your message!",
