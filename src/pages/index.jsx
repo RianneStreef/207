@@ -18,7 +18,6 @@ import CookieConsent, {
   Cookies,
 } from "react-cookie-consent";
 
-import cookies from "../images/icons/cookie.png";
 
 const IndexPage = function (props) {
   let { language, languageToUse } = props;
